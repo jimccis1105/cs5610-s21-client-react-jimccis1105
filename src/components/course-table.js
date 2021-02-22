@@ -66,6 +66,7 @@ export default class CourseTable
                 title={course.title}
                 owner={course.owner}
                 lastModified={course.lastModified}
+                  setTitle={this.props.setTitle}
               />)
           }
           </tbody>

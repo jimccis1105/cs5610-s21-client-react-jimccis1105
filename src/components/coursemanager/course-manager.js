@@ -34,12 +34,12 @@ class CourseManager extends React.Component {
 
     updateTitle
     componentDidMount = () =>
-        // findAllCourses()
-        //     .then(actualCourses => this.setState({
-        //       courses: actualCourses
-        //     }))
         findAllCourses()
-            .then(courses => this.setState({courses}))
+            .then(actualCourses => this.setState({
+              courses: actualCourses.reverse()
+            }))
+        // findAllCourses()
+        //     .then(courses => this.setState({courses}))
 
     addCourse = () => {
         const newCourse = {
@@ -56,7 +56,7 @@ class CourseManager extends React.Component {
                         ...prevState.courses
                     ]
                 })))
-
+        this.resetTitle();
         // this.state.courses.push(newCourse)
         // this.setState(this.state)
     }
@@ -102,6 +102,15 @@ class CourseManager extends React.Component {
         )
     }
 
+    resetTitle = () => {
+        this.setState(
+            (prevState) => ({
+                ...prevState,
+                title:''
+            })
+        )
+    }
+
 
 
     render() {
@@ -141,7 +150,13 @@ class CourseManager extends React.Component {
                     <CourseTable
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
-                        courses={this.state.courses}/>
+                        courses={this.state.courses}
+                    setTitle={this.setTitle}/>
+                    <div className="fixed-bottom">
+                        <button className="btn float-right btn-margin" onClick={this.addCourse}>
+                            <i className="fa fa-plus color-white"></i>
+                        </button>
+                    </div>
                 </Route>
                 <Route path="/courses/grid">
                     <CourseGrid
