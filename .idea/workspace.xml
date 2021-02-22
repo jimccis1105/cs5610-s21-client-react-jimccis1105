@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26efe602-b595-4ab1-8e71-9b2473759b45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-grid/course-card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-grid/course-grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-row.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-table/course-row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-table-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-table/course-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/coursemanager/course-manager-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/coursemanager/course-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" afterDir="false" />
-    </list>
+    <list default="true" id="26efe602-b595-4ab1-8e71-9b2473759b45" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +73,7 @@
       <updated>1613634579697</updated>
       <workItem from="1613634592846" duration="47493000" />
       <workItem from="1614004638721" duration="1672000" />
-      <workItem from="1614006349068" duration="6016000" />
+      <workItem from="1614006349068" duration="6512000" />
     </task>
     <servers />
   </component>
