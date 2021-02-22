@@ -151,7 +151,8 @@ class CourseManager extends React.Component {
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}
-                    setTitle={this.setTitle}/>
+                        setTitle={this.setTitle}
+                        resetTitle={this.resetTitle}/>
                     <div className="fixed-bottom">
                         <button className="btn btn-round float-right btn-margin" onClick={this.addCourse}>
                             <i className="fa fa-plus color-white"></i>
@@ -160,8 +161,11 @@ class CourseManager extends React.Component {
                 </Route>
                 <Route path="/courses/grid">
                     <CourseGrid
+                        updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
-                        courses={this.state.courses}/>
+                        courses={this.state.courses}
+                        setTitle={this.setTitle}
+                        resetTitle={this.resetTitle}/>
                     <div className="fixed-bottom">
                         <button className="btn btn-round float-right btn-margin" onClick={this.addCourse}>
                             <i className="fa fa-plus color-white"></i>

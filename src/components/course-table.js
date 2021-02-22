@@ -60,13 +60,14 @@ export default class CourseTable
             this.props.courses.map((course, ndx) =>
               <CourseRow
                   updateCourse={this.props.updateCourse}
-                deleteCourse={this.props.deleteCourse}
-                key={ndx}
-                course={course}
-                title={course.title}
-                owner={course.owner}
-                lastModified={course.lastModified}
+                  deleteCourse={this.props.deleteCourse}
+                  key={ndx}
+                  course={course}
+                  title={course.title}
+                  owner={course.owner}
+                  lastModified={course.lastModified}
                   setTitle={this.props.setTitle}
+                  resetTitle={this.props.resetTitle}
               />)
           }
           </tbody>

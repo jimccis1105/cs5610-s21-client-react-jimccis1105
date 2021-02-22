@@ -64,8 +64,9 @@ body {
 }
 
 .edit-btn {
-    position:relative;
-    top:50px;
+    position:absolute;
+    right:5px;
+    bottom:5px;
 }
 
 .my-controls-at-top-right {
