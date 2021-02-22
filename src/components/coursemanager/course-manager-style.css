@@ -29,7 +29,7 @@
     padding-left:30px;
 }
 
-.btn {
+.btn-round {
     display:block;
     background-color:red;
     border-radius: 50%;
@@ -38,7 +38,8 @@
 
 .course-header {
     background-color: lightgrey;
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 body {
@@ -60,4 +61,15 @@ body {
 
 .btn-margin {
     margin:30px;
+}
+
+.edit-btn {
+    position:relative;
+    top:50px;
+}
+
+.my-controls-at-top-right {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }

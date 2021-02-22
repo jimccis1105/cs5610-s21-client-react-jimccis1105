@@ -136,7 +136,7 @@ class CourseManager extends React.Component {
                                    value={this.state.title}/>
                         </div>
                         <div className="col-3 col-md-3">
-                            <button className="btn" onClick={this.addCourse}>
+                            <button className="btn btn-round" onClick={this.addCourse}>
                                 <i className="fa fa-plus color-white"></i>
                             </button>
                         </div>
@@ -153,7 +153,7 @@ class CourseManager extends React.Component {
                         courses={this.state.courses}
                     setTitle={this.setTitle}/>
                     <div className="fixed-bottom">
-                        <button className="btn float-right btn-margin" onClick={this.addCourse}>
+                        <button className="btn btn-round float-right btn-margin" onClick={this.addCourse}>
                             <i className="fa fa-plus color-white"></i>
                         </button>
                     </div>
@@ -162,6 +162,11 @@ class CourseManager extends React.Component {
                     <CourseGrid
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
+                    <div className="fixed-bottom">
+                        <button className="btn btn-round float-right btn-margin" onClick={this.addCourse}>
+                            <i className="fa fa-plus color-white"></i>
+                        </button>
+                    </div>
                 </Route>
                 {/*<Route path="/courses/editor">*/}
                 {/*    <CourseEditor/>*/}
