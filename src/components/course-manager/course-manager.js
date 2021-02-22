@@ -1,7 +1,7 @@
 import React from 'react'
-import CourseTable from "../course-table";
-import CourseGrid from "../course-grid";
-import CourseEditor from "../course-editor";
+import CourseTable from "../course-table/course-table";
+import CourseGrid from "../course-grid/course-grid";
+import CourseEditor from "../course-editor/course-editor";
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
 import "./course-manager-style.css";
@@ -21,25 +21,14 @@ class CourseManager extends React.Component {
                 ...prevState,
                 courses: prevState.courses.map(
                     (c) => c._id === course._id ? course : c)
-
-                // courses: prevState.courses.map(c => {
-                //   if(c._id === course._id) {
-                //     return course
-                //   } else {
-                //     return c
-                //   }
-                // })
             })))
     }
 
-    updateTitle
     componentDidMount = () =>
         findAllCourses()
             .then(actualCourses => this.setState({
               courses: actualCourses.reverse()
             }))
-        // findAllCourses()
-        //     .then(courses => this.setState({courses}))
 
     addCourse = () => {
         const newCourse = {
@@ -57,34 +46,11 @@ class CourseManager extends React.Component {
                     ]
                 })))
         this.resetTitle();
-        // this.state.courses.push(newCourse)
-        // this.setState(this.state)
     }
 
     deleteCourse = (courseToDelete) => {
         courseService.deleteCourse(courseToDelete._id)
             .then(status => {
-                // const newCourses = this.state.courses
-                //     .filter(course => course !== courseToDelete)
-                // this.setState({
-                //   courses: newCourses
-                // })
-                // this.setState((prevState) => {
-                //   // let nextState = {...prevState}
-                //   // nextState.courses =
-                //   //     prevState
-                //   //         .courses
-                //   //         .filter(course => course !== courseToDelete)
-                //
-                //   let nextState = {
-                //     ...prevState,
-                //     courses: prevState.courses.filter
-                //               (course => course !== courseToDelete)
-                //   }
-                //
-                //   return nextState
-                // })
-
                 this.setState((prevState) => ({
                     ...prevState,
                     courses: prevState.courses.filter
@@ -111,20 +77,15 @@ class CourseManager extends React.Component {
         )
     }
 
-
-
     render() {
         return(
             <div>
-                <Link to="/">
-                    <i className="fas fa-2x fa-home float-right"></i>
-                </Link>
-                {/*<h1>Course Manager</h1>*/}
-                {/*<button onClick={this.addCourse}>Add Course</button>*/}
                 <div className="wbdv-sticky-top wbdv-padding-5px">
                     <div className="row">
                         <div className="col-2 col-md-1">
-                            <i className="fa fa-bars fa-2x color-white padding-top-icon  padding-left"></i>
+                            <Link to="/">
+                                <i className="fas fa-2x fa-home color-white float-right padding-top-icon padding-left"></i>
+                            </Link>
                         </div>
                         <div className="col-md-2 color-white padding-top-h4 d-none d-lg-block">
                             <h4>Course Manager</h4>
@@ -172,12 +133,6 @@ class CourseManager extends React.Component {
                         </button>
                     </div>
                 </Route>
-                {/*<Route path="/courses/editor">*/}
-                {/*    <CourseEditor/>*/}
-                {/*</Route>*/}
-                {/*<Route path="/courses/editor"*/}
-                {/*       render={(props) => <CourseEditor props={props}/>}>*/}
-                {/*</Route>*/}
                 <Route path="/courses/editor"
                        render={(props) => <CourseEditor {...props}/>}>
                 </Route>

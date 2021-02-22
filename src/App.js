@@ -1,5 +1,5 @@
 // import './App.css';
-import CourseManager from "./components/coursemanager/course-manager";
+import CourseManager from "./components/course-manager/course-manager";
 import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./components/home"
 function App() {

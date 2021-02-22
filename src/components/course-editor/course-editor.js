@@ -1,18 +1,9 @@
 import React from 'react'
-import {Link} from "react-router-dom";
-
-// const CourseEditor = ({props}) =>
 const CourseEditor = ({history}) =>
   <div>
       <ul className="nav nav-tabs navs-background-color">
           <div className="course-title-padding">
-              {/*<Link className='ml-4' to="/courses/table">*/}
                   <i className="fas fa-arrow-left fa-2x ml-4" onClick={() => history.goBack()}></i>
-              {/*</Link>*/}
-              {/*<i className="fas fa-times"></i>*/}
-              {/*<h4 className="course-title-display course-title-color">*/}
-              {/*    CS5610-WebDev*/}
-              {/*</h4>*/}
           </div>
           <li className="nav-item">
               <a className="nav-link" aria-current="page" href="#">
