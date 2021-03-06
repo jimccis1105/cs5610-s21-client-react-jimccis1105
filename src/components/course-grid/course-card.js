@@ -66,7 +66,7 @@ const CourseCard = (
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                     content.</p>
                 <img src={``}/>
-                <Link to="/courses/editor">
+                <Link to={`/courses/grid/edit/${course._id}`}>
                     <button type="button" className="btn btn-primary">{course.title}</button>
                 </Link>
             </div>

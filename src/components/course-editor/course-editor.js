@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, useParams, useHistory} from "react-router-dom";
 const CourseEditor = ({history}) =>
   <div>
       <ul className="nav nav-tabs navs-background-color">

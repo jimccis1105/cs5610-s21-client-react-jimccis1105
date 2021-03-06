@@ -107,7 +107,7 @@ class CourseManager extends React.Component {
                 <br/>
                 <br/>
                 <br/>
-                <Route path="/courses/table">
+                <Route path="/courses/table" exact={true}>
                     <CourseTable
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
@@ -120,7 +120,7 @@ class CourseManager extends React.Component {
                         </button>
                     </div>
                 </Route>
-                <Route path="/courses/grid">
+                <Route path="/courses/grid" exact={true}>
                     <CourseGrid
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
@@ -133,8 +133,10 @@ class CourseManager extends React.Component {
                         </button>
                     </div>
                 </Route>
-                <Route path="/courses/editor"
-                       render={(props) => <CourseEditor {...props}/>}>
+                <Route path={[
+                    "/courses/:layout/edit/:courseId"]}
+                        exact={true}
+                        render={(props) => <CourseEditor {...props}/>}>
                 </Route>
             </div>
         )
