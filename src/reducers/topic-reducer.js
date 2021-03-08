@@ -12,17 +12,13 @@ const topicReducer = (state=initialState, action) => {
                     action.topic
                 ]
             }
-        case "DELETE_TOPIC":
+        case "FIND_TOPICS":
             return {
                 ...state,
-                topics: state.topics.filter(topic => {
-                    if(topic._id !== action.topicToDelete._id) {
-                        return true
-                    } else {
-                        return false
-                    }
-                })
+                topics: action.topics
             }
+        case "FIND_TOPIC":
+            return state.topics.find(topic => topic._id === action.findTopic._id);
         case "UPDATE_TOPIC":
             return {
                 ...state,
@@ -34,10 +30,16 @@ const topicReducer = (state=initialState, action) => {
                     }
                 })
             }
-        case "FIND_TOPICS":
+        case "DELETE_TOPIC":
             return {
                 ...state,
-                topics: action.topics
+                topics: state.topics.filter(topic => {
+                    if(topic._id !== action.topicToDelete._id) {
+                        return true
+                    } else {
+                        return false
+                    }
+                })
             }
         default:
             return state

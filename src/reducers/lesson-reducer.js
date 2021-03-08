@@ -1,3 +1,5 @@
+import { bindActionCreators } from "redux";
+
 const initialState = {
     lessons: []
 }
@@ -12,17 +14,13 @@ const lessonReducer = (state=initialState, action) => {
                     action.lesson
                 ]
             }
-        case "DELETE_LESSON":
+        case "FIND_LESSONS":
             return {
                 ...state,
-                lessons: state.lessons.filter(lesson => {
-                    if(lesson._id !== action.lessonToDelete._id) {
-                        return true
-                    } else {
-                        return false
-                    }
-                })
+                lessons: action.lessons
             }
+        case "FIND_LESSON":
+            return state.lessons.find(lesson => lesson._id === action.findLesson._id);
         case "UPDATE_LESSON":
             return {
                 ...state,
@@ -34,10 +32,16 @@ const lessonReducer = (state=initialState, action) => {
                     }
                 })
             }
-        case "FIND_LESSONS":
+        case "DELETE_LESSON":
             return {
                 ...state,
-                lessons: action.lessons
+                lessons: state.lessons.filter(lesson => {
+                    if(lesson._id !== action.lessonToDelete._id) {
+                        return true
+                    } else {
+                        return false
+                    }
+                })
             }
         default:
             return state
