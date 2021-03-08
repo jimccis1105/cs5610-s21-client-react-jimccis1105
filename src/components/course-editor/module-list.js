@@ -11,7 +11,7 @@ const ModuleList = (
         createModule,
         updateModule,
         deleteModule,
-        findModulesForCourse
+        findModulesForCourse,
     }) => {
     const {layout, courseId, moduleId} = useParams();
     useEffect(() => {
@@ -36,7 +36,7 @@ const ModuleList = (
                             to={`/courses/${layout}/edit/${courseId}/modules/${module._id}`}
                             deleteItem={deleteModule}
                             updateItem={updateModule}
-                            // active={module._id === moduleId}
+                            active={true}
                             item={module}/>
                     </li>
                 )

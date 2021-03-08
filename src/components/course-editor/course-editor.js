@@ -101,15 +101,15 @@
 import React from 'react'
 import {Link, useParams, useHistory} from "react-router-dom";
 import moduleReducer from "../../reducers/module-reducer";
-// import lessonReducer from "../reducers/lesson-reducer";
+import lessonReducer from "../../reducers/lesson-reducer";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 import ModuleList from "./module-list";
-// import LessonTabs from "./lesson-tabs";
+import LessonTabs from "./lesson-tabs";
 
 const reducer = combineReducers({
-    moduleReducer: moduleReducer
-    // lessonReducer: lessonReducer
+    moduleReducer: moduleReducer,
+    lessonReducer: lessonReducer
 })
 
 const store = createStore(reducer)
@@ -118,6 +118,7 @@ const CourseEditor = ({history, params}) => {
     const {layout, courseId, moduleId} = useParams();
     return(
         <Provider store={store}>
+            <br/>
             <div>
                 <ul className="nav nav-tabs navs-background-color">
                     <div className="course-title-padding">
@@ -189,7 +190,8 @@ const CourseEditor = ({history, params}) => {
                   </a> */}
               </div>
               <div className="col-8">
-                  <ul className="nav nav-pills">
+              <LessonTabs/>
+                  {/* <ul className="nav nav-pills">
                       <li className="nav-item nav-topic-item">
                           <a className="nav-link" aria-current="page" href="#">Topic 1</a>
                       </li>
@@ -207,7 +209,7 @@ const CourseEditor = ({history, params}) => {
                               <i className="fa fa-plus"></i>
                           </a>
                       </li>
-                  </ul>
+                  </ul> */}
               </div>
           </div>
       </div>
