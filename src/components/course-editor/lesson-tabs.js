@@ -26,7 +26,7 @@ const LessonTabs = (
     return(
     <div>
         <h2>Lessons</h2>
-        <ul className="nav nav-pills"> 
+        <ul className="nav nav-pills nav-tabs"> 
             {
                 lessons.map(lesson =>
                     <li key={lesson._id} className= "nav-item nav-topic-item">

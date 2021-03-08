@@ -102,14 +102,17 @@ import React from 'react'
 import {Link, useParams, useHistory} from "react-router-dom";
 import moduleReducer from "../../reducers/module-reducer";
 import lessonReducer from "../../reducers/lesson-reducer";
+import topicReducer from "../../reducers/topic-reducer"
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 import ModuleList from "./module-list";
 import LessonTabs from "./lesson-tabs";
+import TopicPills from "./topic-pills";
 
 const reducer = combineReducers({
     moduleReducer: moduleReducer,
-    lessonReducer: lessonReducer
+    lessonReducer: lessonReducer,
+    topicReducer: topicReducer
 })
 
 const store = createStore(reducer)
@@ -191,6 +194,7 @@ const CourseEditor = ({history, params}) => {
               </div>
               <div className="col-8">
               <LessonTabs/>
+              <TopicPills/>
                   {/* <ul className="nav nav-pills">
                       <li className="nav-item nav-topic-item">
                           <a className="nav-link" aria-current="page" href="#">Topic 1</a>
