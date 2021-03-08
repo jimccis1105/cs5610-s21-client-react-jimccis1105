@@ -10,11 +10,13 @@ export const createLessonForModule = (moduleId, lesson) =>
         }
     })
         .then(response => response.json())
-
+        
 export const findLessonsForModule = (moduleId) =>
     fetch(`${MODULES_URL}/${moduleId}/lessons`)
         .then(response => response.json())
 
+export const findLessonById = (lessonId) =>
+    fetch(`${LESSONS_URL}/${lessonId}`).then(response => response.json())
 
 export const updateLesson = (lessonId, lesson) =>
     fetch(`${LESSONS_URL}/${lessonId}`, {
