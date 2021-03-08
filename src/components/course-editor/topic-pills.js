@@ -40,7 +40,9 @@ const TopicPills = (
                 )
             }
             <li>
-                <i onClick={() => createTopicForLesson(lessonId)} className="fas fa-plus"></i>
+                {lessonId &&
+                    <i onClick={() => createTopicForLesson(lessonId)} className="fas fa-plus"></i>
+                }
             </li>
         </ul>
     </div>)}

@@ -125,7 +125,10 @@ const CourseEditor = ({history, params}) => {
             <div>
                 <ul className="nav nav-tabs navs-background-color">
                     <div className="course-title-padding">
-                            <i className="fas fa-arrow-left fa-2x ml-4" onClick={() => history.goBack()}></i>
+                            {/* <i className="fas fa-arrow-left fa-2x ml-4" onClick={() => history.goBack()}></i> */}
+                            <Link to={`/courses/${layout}`}>
+                                <i className="fas fa-arrow-left fa-2x ml-4"></i>
+                            </Link>
                     </div>
                     <li className="nav-item">
                         <a className="nav-link" aria-current="page" href="#">

@@ -12,10 +12,10 @@ const ModuleList = (
         updateModule,
         deleteModule,
         findModulesForCourse,
+        findTopicsForLesson
     }) => {
-    const {layout, courseId, moduleId} = useParams();
+    const {layout, courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
-        // console.log(courseId)
         findModulesForCourse(courseId)
     }, [courseId])
     return(<div>
@@ -24,6 +24,7 @@ const ModuleList = (
             <li>layout: {layout}</li>
             <li>courseId: {courseId}</li>
             <li>moduleId: {moduleId}</li>
+            <li>lessionId: {lessonId}</li>
         </ul>
 
 

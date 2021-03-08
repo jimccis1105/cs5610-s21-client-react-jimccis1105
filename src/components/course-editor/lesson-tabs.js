@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import EditableItem from "./editable-item";
 import {useParams} from "react-router-dom";
 import lessonService from '../../services/lesson-service.js'
+import topicService from "../../services/topic-service"
 
 const LessonTabs = (
     {
@@ -14,14 +15,19 @@ const LessonTabs = (
         findLessonsForModule,
         createLessonForModule,
         updateLesson,
-        deleteLesson
+        deleteLesson,
+        findTopicsForLesson
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
         console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
-            findLessonsForModule(moduleId)
+            // findLessonsForModule(moduleId)
         }
+        // if(lessonId === "undefined" && typeof lessonId === "undefined") {
+        findTopicsForLesson(lessonId)
+        findLessonsForModule(moduleId)
+        // }
     }, [moduleId])
     return(
     <div>
@@ -40,7 +46,9 @@ const LessonTabs = (
                 )
             }
             <li>
+                {moduleId &&
                 <i onClick={() => createLessonForModule(moduleId)} className="fas fa-plus"></i>
+                }
             </li>
         </ul>
     </div>)}
@@ -74,7 +82,16 @@ const dtpm = (dispatch) => ({
                 type: "CREATE_LESSON",
                 lesson
             }))
-    }
+    },
+    findTopicsForLesson: (lessonId) => {
+        console.log("LOAD TOPICS FOR LESSON:")
+        console.log(lessonId)
+        topicService.findTopicsForLesson(lessonId)
+            .then(topics => dispatch({
+                type: "FIND_TOPICS",
+                topics
+            }))
+    },
 })
 
 export default connect(stpm, dtpm)(LessonTabs)
