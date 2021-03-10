@@ -18,12 +18,12 @@ const ModuleList = (
     }, [courseId])
     return(<div>
         <h2>Module List</h2>
-        <ul>
+        {/* <ul>
             <li>layout: {layout}</li>
             <li>courseId: {courseId}</li>
             <li>moduleId: {moduleId}</li>
             <li>lessionId: {lessonId}</li>
-        </ul>
+        </ul> */}
 
         <ul className="list-group">
             {
