@@ -80,6 +80,7 @@ class CourseManager extends React.Component {
     render() {
         return(
             <div>
+                <Route path="/courses/table" exact={true}>
                 <div className="wbdv-sticky-top wbdv-padding-5px">
                     <div className="row">
                         <div className="col-2 col-md-1">
@@ -107,7 +108,6 @@ class CourseManager extends React.Component {
                 <br/>
                 <br/>
                 <br/>
-                <Route path="/courses/table" exact={true}>
                     <CourseTable
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
@@ -121,6 +121,33 @@ class CourseManager extends React.Component {
                     </div>
                 </Route>
                 <Route path="/courses/grid" exact={true}>
+                <div className="wbdv-sticky-top wbdv-padding-5px">
+                    <div className="row">
+                        <div className="col-2 col-md-1">
+                            <Link to="/">
+                                <i className="fas fa-2x fa-home color-white float-right padding-top-icon padding-left"></i>
+                            </Link>
+                        </div>
+                        <div className="col-md-2 color-white padding-top-h4 d-none d-lg-block">
+                            <h4>Course Manager</h4>
+                        </div>
+                        <div className="col-7 col-md-6 padding-top-input">
+                            <input className="form-control color-white"
+                                   placeholder="New Course Title"
+                                   onChange={(event) => this.setTitle(event.target.value)}
+                                   value={this.state.title}/>
+                        </div>
+                        <div className="col-3 col-md-3">
+                            <button className="btn btn-round" onClick={this.addCourse}>
+                                <i className="fa fa-plus color-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+                <br/>
+                <br/>
                     <CourseGrid
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}

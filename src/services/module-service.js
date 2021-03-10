@@ -34,8 +34,13 @@ export const deleteModule = (moduleId) =>
     })
         .then(response => response.json());
 
+//not mentioned in the rubric, implemented it for future use.
+export const findAllModules = () =>
+    fetch(MODULES_URL)
+        .then(response => response.json());
+
 const api = {
-    createModule, findModulesForCourse, deleteModule, updateModule
+    createModule, findModulesForCourse, deleteModule, updateModule, findAllModules
 }
 
 export default api;

@@ -18,7 +18,7 @@ export const findTopicsForLesson = (lessonId) =>
 export const findTopicById = (topicId) =>
     fetch(`${TOPICS_URL}/${topicId}`).then(response => response.json())
 
-    export const updateTopic = (topicId, topic) =>
+export const updateTopic = (topicId, topic) =>
     fetch(`${TOPICS_URL}/${topicId}`, {
         method: "PUT",
         body: JSON.stringify(topic),
@@ -28,13 +28,17 @@ export const findTopicById = (topicId) =>
     })
         .then(response => response.json());
 
-
 export const deleteTopic = (topicId) =>
     fetch(`${TOPICS_URL}/${topicId}`, {
         method: 'DELETE'
     })
         .then(response => response.json());
 
+//not mentioned in the rubric, implemented it for future use
+export const findAllTopics = () =>
+    fetch(TOPICS_URL)
+        .then(response => response.json());
+
 export default {
-    createTopicForLesson, findTopicsForLesson, updateTopic, deleteTopic
+    createTopicForLesson, findTopicsForLesson, updateTopic, deleteTopic, findAllTopics
 }

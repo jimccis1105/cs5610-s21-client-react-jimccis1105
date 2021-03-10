@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react'
-import {connect, Provider} from "react-redux";
+import {connect} from "react-redux";
 import EditableItem from "./editable-item";
 import {useParams} from "react-router-dom";
-// import {findModulesForCourse, createModule} from "../services/module-service";
-import moduleService from "../../services/module-service"
+import moduleService, { findModulesForCourse } from "../../services/module-service"
 
 const ModuleList = (
     {
@@ -11,8 +10,7 @@ const ModuleList = (
         createModule,
         updateModule,
         deleteModule,
-        findModulesForCourse,
-        findTopicsForLesson
+        findModulesForCourse
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
     useEffect(() => {
@@ -27,13 +25,11 @@ const ModuleList = (
             <li>lessionId: {lessonId}</li>
         </ul>
 
-
         <ul className="list-group">
             {
                 modules.map(module =>
                     <li key={module._id} className= {`list-group-item ${module._id === moduleId? 'active' : ''}`}>
                         <EditableItem
-                            
                             to={`/courses/${layout}/edit/${courseId}/modules/${module._id}`}
                             deleteItem={deleteModule}
                             updateItem={updateModule}
@@ -43,7 +39,7 @@ const ModuleList = (
                 )
             }
             <li className="list-group-item">
-                <i onClick={() => createModule(courseId)} className="fas fa-plus fa-2x"></i>
+                <i onClick={() => createModule(courseId)} className="fas fa-plus fa-2x float-right"></i>
             </li>
         </ul>
     </div>)}
@@ -63,10 +59,24 @@ const dtpm = (dispatch) => ({
     },
     deleteModule: (moduleToDelete) => {
         moduleService.deleteModule(moduleToDelete._id)
-            .then(status => dispatch({type: "DELETE_MODULE", moduleToDelete: moduleToDelete}))
+            .then(status =>{
+                dispatch({type: "FIND_LESSONS", lessons:[]})
+                dispatch({type: "FIND_TOPICS", topics:[]})
+                dispatch({type: "DELETE_MODULE", moduleToDelete: moduleToDelete})
+                findModulesForCourse()
+            })
     },
     findModulesForCourse: (courseId) => {
         moduleService.findModulesForCourse(courseId)
+            .then(modules => dispatch({
+                type: "FIND_MODULES_FOR_COURSE",
+                modules: modules  
+        }))
+    },
+
+    //not mentioned in the rubric, implemented it for future use
+    findAllModules: () => {
+        moduleService.findAllModules()
             .then(modules => dispatch({
                 type: "FIND_MODULES_FOR_COURSE",
                 modules: modules  

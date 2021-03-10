@@ -76,7 +76,17 @@ const dtpm = (dispatch) => ({
                 type: "CREATE_TOPIC",
                 topic
             }))
-    }
+    },
+
+    //not mentioned in the rubric, implemented it for future use.
+    findAllTopics: () => {
+        console.log("LOAD TOPICS FOR LESSON:")
+        topicService.findAllTopics()
+            .then(topics => dispatch({
+                type: "FIND_TOPICS",
+                topics
+            }))
+    },
 })
 
 export default connect(stpm, dtpm)(TopicPills)
