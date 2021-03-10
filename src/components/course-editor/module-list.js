@@ -24,7 +24,6 @@ const ModuleList = (
             <li>moduleId: {moduleId}</li>
             <li>lessionId: {lessonId}</li>
         </ul> */}
-
         <ul className="list-group">
             {
                 modules.map(module =>
