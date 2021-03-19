@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26efe602-b595-4ab1-8e71-9b2473759b45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-editor/module-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/module-list.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <workItem from="1614004638721" duration="1672000" />
       <workItem from="1614006349068" duration="6526000" />
       <workItem from="1614150416697" duration="1000" />
-      <workItem from="1616136116078" duration="3511000" />
+      <workItem from="1616136116078" duration="6240000" />
     </task>
     <servers />
   </component>
