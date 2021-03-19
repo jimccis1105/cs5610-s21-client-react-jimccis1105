@@ -13,6 +13,7 @@ const ModuleList = (
         findModulesForCourse
     }) => {
     const {layout, courseId, moduleId, lessonId} = useParams();
+    // console.log(findModulesForCourse(courseId));
     useEffect(() => {
         findModulesForCourse(courseId)
     }, [courseId])
