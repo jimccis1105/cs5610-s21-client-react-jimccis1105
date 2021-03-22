@@ -6,11 +6,7 @@ import topicService from '../../services/topic-service.js'
 
 const TopicPills = (
     {
-        topics=[
-            {_id: "123", title: "Lesson A"},
-            {_id: "123", title: "Lesson B"},
-            {_id: "123", title: "Lesson C"}
-        ],
+        topics,
         findTopicsForLesson,
         createTopicForLesson,
         updateTopic,

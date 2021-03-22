@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26efe602-b595-4ab1-8e71-9b2473759b45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/widgets/heading-widget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/widgets/paragraph-widget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/widgets/widget-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/course-editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-editor/topic-pills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-editor/topic-pills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-manager/course-manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/widget-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/widget-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/widget-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/widget-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1oe6Bmmr3eu7m6HY34of3dBwopk" />
   <component name="ProjectLevelVcsManager">
@@ -54,19 +66,6 @@
       <recent name="$PROJECT_DIR$/src/components/coursetable" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,7 +78,9 @@
       <workItem from="1614004638721" duration="1672000" />
       <workItem from="1614006349068" duration="6526000" />
       <workItem from="1614150416697" duration="1000" />
-      <workItem from="1616136116078" duration="6240000" />
+      <workItem from="1616136116078" duration="32687000" />
+      <workItem from="1616225672807" duration="23230000" />
+      <workItem from="1616419649600" duration="5159000" />
     </task>
     <servers />
   </component>
@@ -97,5 +98,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/widgets/widget-list.js</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

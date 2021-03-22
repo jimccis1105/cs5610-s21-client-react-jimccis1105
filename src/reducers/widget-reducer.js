@@ -15,7 +15,7 @@ const widgetReducer = (state=initialState, action) => {
             return {
                 ...state,
                 widgets: state.widgets.filter(widget => {
-                    if(widget._id !== action.widgetToDelete._id) {
+                    if(widget.id !== action.widgetToDelete.id) {
                         return true
                     } else {
                         return false
@@ -26,7 +26,7 @@ const widgetReducer = (state=initialState, action) => {
             return {
                 ...state,
                 widgets: state.widgets.map(widget => {
-                    if(widget._id === action.updateWidget._id) {
+                    if(widget.id === action.updateWidget.id) {
                         return action.updateWidget
                     } else {
                         return widget
@@ -44,7 +44,7 @@ const widgetReducer = (state=initialState, action) => {
                 widgets: action.widgets
             }
         case "FIND_WIDGET":
-            return state.widgets.find(widget => widget._id === action.findWidget._id);
+            return state.widgets.find(widget => widget.id === action.findWidget.id);
         default:
             return state
     }
