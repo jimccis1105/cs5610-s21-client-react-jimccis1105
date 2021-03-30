@@ -41,6 +41,7 @@ const TopicPills = (
                 }
             </li>
         </ul>
+        {JSON.stringify(topics)}
     </div>)}
 
 const stpm = (state) => ({

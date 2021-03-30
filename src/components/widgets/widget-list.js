@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import HeadingWidget from "./heading-widget";
 import ParagraphWidget from "./paragraph-widget";
+import ListWidget from "./list-widget"
 import {useParams} from "react-router-dom";
 import widgetService from "../../services/widget-service";
 import {connect} from "react-redux";
@@ -31,6 +32,7 @@ const WidgetList = (
     }
     const toggleType = (widget, type) => {
         const excludeCurrWidget = editingWidgets.filter(w => w.id !== widget.id);
+        widget.ordered = false;
         widget.type = type;
         if (!widget.size) {
             widget.size = 1;
@@ -68,6 +70,7 @@ const WidgetList = (
                                             toggleType(widget, e.target.value)}>
                                     <option value='PARAGRAPH'>Paragraph</option>
                                     <option value='HEADING'>Heading</option>
+                                    <option value='LIST'>List</option>
                                 </select>
                             }
                             {
@@ -83,6 +86,20 @@ const WidgetList = (
                                     editingWidgets={editingWidgets}
                                     setEditingWidgets={setEditingWidgets}
                                     widget={widget}/>
+                            }
+                            {
+                            widget.type === "LIST" &&
+                            <ListWidget
+                                editingWidgets={editingWidgets}
+                                setEditingWidgets={setEditingWidgets}
+                                widget={widget}/>
+                            }
+                            {
+                            widget.type === "IMAGE" &&
+                            <ListWidget
+                                editingWidgets={editingWidgets}
+                                setEditingWidgets={setEditingWidgets}
+                                widget={widget}/>
                             }
                         </li>
                     )
