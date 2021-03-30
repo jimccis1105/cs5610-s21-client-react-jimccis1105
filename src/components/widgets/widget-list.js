@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import HeadingWidget from "./heading-widget";
 import ParagraphWidget from "./paragraph-widget";
 import ListWidget from "./list-widget"
+import ImageWidget from "./image-widget"
 import {useParams} from "react-router-dom";
 import widgetService from "../../services/widget-service";
 import {connect} from "react-redux";
@@ -71,6 +72,7 @@ const WidgetList = (
                                     <option value='PARAGRAPH'>Paragraph</option>
                                     <option value='HEADING'>Heading</option>
                                     <option value='LIST'>List</option>
+                                    <option value='IMAGE'>Image</option>
                                 </select>
                             }
                             {
@@ -96,7 +98,7 @@ const WidgetList = (
                             }
                             {
                             widget.type === "IMAGE" &&
-                            <ListWidget
+                            <ImageWidget
                                 editingWidgets={editingWidgets}
                                 setEditingWidgets={setEditingWidgets}
                                 widget={widget}/>
@@ -133,7 +135,7 @@ const dtpm = (dispatch) => ({
     createWidgetForTopic: (topicId) => {
         console.log("CREATE WIDGET FOR TOPIC: " + topicId)
         widgetService
-            .createWidgetForTopic(topicId, {type: "HEADING", size: 1, text: "New Widget"})
+            .createWidgetForTopic(topicId, {type: "HEADING", size: 1, text: "New Widget", src:''})
             .then(widget => dispatch({
                 type: "CREATE_WIDGET",
                 widget
