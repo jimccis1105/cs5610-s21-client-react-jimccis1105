@@ -33,7 +33,7 @@ const WidgetList = (
     }
     const toggleType = (widget, type) => {
         const excludeCurrWidget = editingWidgets.filter(w => w.id !== widget.id);
-        widget.ordered = false;
+        // widget.ordered = false;
         widget.type = type;
         if (!widget.size) {
             widget.size = 1;
@@ -90,18 +90,18 @@ const WidgetList = (
                                     widget={widget}/>
                             }
                             {
-                            widget.type === "LIST" &&
-                            <ListWidget
-                                editingWidgets={editingWidgets}
-                                setEditingWidgets={setEditingWidgets}
-                                widget={widget}/>
+                                widget.type === "LIST" &&
+                                <ListWidget
+                                    editingWidgets={editingWidgets}
+                                    setEditingWidgets={setEditingWidgets}
+                                    widget={widget}/>
                             }
                             {
-                            widget.type === "IMAGE" &&
-                            <ImageWidget
-                                editingWidgets={editingWidgets}
-                                setEditingWidgets={setEditingWidgets}
-                                widget={widget}/>
+                                widget.type === "IMAGE" &&
+                                <ImageWidget
+                                    editingWidgets={editingWidgets}
+                                    setEditingWidgets={setEditingWidgets}
+                                    widget={widget}/>
                             }
                         </li>
                     )

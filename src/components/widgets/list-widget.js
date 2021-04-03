@@ -20,7 +20,7 @@ const ListWidget = ({widget, editingWidgets, setEditingWidgets}) => {
                         <br/>
                         Item list
                         <textarea onChange={(event)=>toggleTextarea(event.target.value)} value={widget.text} rows={10} className="form-control"></textarea>
-                        {JSON.stringify(widget)}
+                        {/* {JSON.stringify(widget)} */}
                     </>
             }
             {
