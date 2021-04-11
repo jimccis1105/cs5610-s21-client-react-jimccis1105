@@ -59,13 +59,18 @@ const CourseRow = (
                     className="form-control"/>
             }
         </div>
-        <div className="col-lg-3 col-md-6 d-none d-md-block d-lg-block">
+        <div className="col-lg-3 col-md-3 d-none d-md-block d-lg-block">
             {owner}
         </div>
-        <div className="col-lg-3 col-md-1 d-none d-lg-block">
+        <div className="col-lg-1 col-md-1 col-0 d-none d-lg-block">
             {lastModified}
         </div>
-        <div className="col-5 col-md-1 col-lg-1">
+        <div className="col-lg-2 col-md-3 col-sm-4 col-1 d-lg-block">
+            <Link to={`/courses/${course._id}/quizzes`}>
+                Quizzes
+            </Link>
+        </div>
+        <div className="col-4 col-md-1 col-lg-1 col-sm-1">
             {!editing && <h4><i onClick={() => setEditingHelper()} className="fas fa-edit float-right"></i></h4>}
             {editing && <h4>
                             <i onClick={() => saveTitle()} className="fas fa-check float-right"></i>
