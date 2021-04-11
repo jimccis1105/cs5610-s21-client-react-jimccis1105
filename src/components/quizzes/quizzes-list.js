@@ -23,7 +23,9 @@ const QuizzesList = () => {
                                 <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
                                     {quiz.title}
                                 </Link>
-                                <button type="button" class="btn btn-primary">Start</button>
+                                <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                                    <button type="button" class="btn btn-primary">Start</button>
+                                </Link>
                             </li>
                         )
                     })

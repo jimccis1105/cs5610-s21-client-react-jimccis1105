@@ -15,13 +15,13 @@ const Quiz = () => {
     }, [])
 
     return(
-        <div>
+        <div className='pl-3'>
             <h3>Quiz {quizId[0]}</h3>
-            <ul>
+            <ul className='list-group w-50'>
                 {
                     questions.map((question) => {
                         return(
-                            <li>
+                            <li className='list-group-item'> 
                                 <Question question={question}/>
                             </li>
                         )
