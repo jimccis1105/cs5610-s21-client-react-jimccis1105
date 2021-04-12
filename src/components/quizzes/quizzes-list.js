@@ -14,7 +14,14 @@ const QuizzesList = () => {
     }, [])
     return(
         <div class="pt-3 pl-2">
-            <h2>Quizzes</h2>
+            <ul className="nav">
+                <div className='pr-3'>
+                    <Link to={`/courses/table`}>
+                        <i className="fas fa-arrow-left fa-2x"></i>
+                    </Link>
+                </div>
+                <h2>Quizzes</h2>
+            </ul>
             <ul class="list-group w-50">
                 {
                     quizzes.map((quiz) => {

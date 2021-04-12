@@ -9,18 +9,18 @@ const MultipleChoiceQuestion = ({question}) => {
                 {question.question}
                 {
                     question.correct === correctAnswer &&
-                    <i className="fas fa-check" style={{color:'green'}}></i>
+                    <i className="fas fa-check pl-2" style={{color:'green'}}></i>
                 }
                 {
                     correctAnswer !== "" && question.correct !== correctAnswer && 
-                    <i className="fas fa-times" style={{color:'red'}}></i>
+                    <i className="fas fa-times pl-2" style={{color:'red'}}></i>
                 }
             </h5>
             <ul className="list-group w-50">
                 {
                     question.choices.map((choice) => {
                         return(
-                            <li className={`list-group-item
+                            <li className={`list-group-item d-flex justify-content-between align-items-center
                             ${correctAnswer != '' && question.correct === choice? 'list-group-item-success':''}
                             ${correctAnswer === choice && correctAnswer != '' && question.correct != choice? 'list-group-item-danger':''}`}>
                                 <label><input
@@ -28,7 +28,14 @@ const MultipleChoiceQuestion = ({question}) => {
                                         setYourAnswer(choice)
                                     }}
                                     type="radio"
-                                    name={question._id}/> {choice}</label>
+                                    name={question._id}
+                                    disabled={`${correctAnswer != "" ? true: ''}`}/> {choice} </label>
+                                {correctAnswer != '' && question.correct === choice? 
+                                    <i className="fas fa-check"></i>: ''
+                                }
+                                {correctAnswer === choice && correctAnswer != '' && question.correct != choice? 
+                                    <i className="fas fa-times"></i>: ''
+                                }
                             </li>
                         )
                     })

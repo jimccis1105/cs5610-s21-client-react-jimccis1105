@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import Question from "./questions/question";
 
 const Quiz = () => {
-    const {quizId} = useParams()
+    const {quizId, courseId} = useParams()
     const [questions, setQuestions] = useState([])
     useEffect(() => {
         // TODO: move this to a service file
@@ -16,7 +16,14 @@ const Quiz = () => {
 
     return(
         <div className='pl-3'>
-            <h3>Quiz {quizId[0]}</h3>
+            <ul className="nav">
+                <div className='pr-3'>
+                    <Link to={`/courses/${courseId}/quizzes/`}>
+                        <i className="fas fa-arrow-left fa-2x"></i>
+                    </Link>
+                </div>
+                <h3>Quiz {quizId[0]}</h3>
+            </ul>
             <ul className='list-group w-50'>
                 {
                     questions.map((question) => {
