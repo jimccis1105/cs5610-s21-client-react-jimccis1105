@@ -3,11 +3,8 @@ import React, {useState} from "react";
 const TrueFalseQuestion = ({question}) => {
     const [yourAnswer, setYourAnswer] = useState("")
     const [correctAnswer, setCorrectAnswer] = useState("")
-    // const [answerTrue, setAnswerTrue] = useState("")
-    // const [answerFalse, setAnswerFalse] = useState("")
     return(
         <div>
-            {/* <h5>{question.question}</h5> */}
             <h4>
                 {question.question}
                 {
@@ -48,7 +45,6 @@ const TrueFalseQuestion = ({question}) => {
                 Your answer: {yourAnswer}
             </p>
             <button onClick={()=>{setCorrectAnswer(yourAnswer)}} type="button" class="btn btn-success">Grade</button>
-            {/* <hr/> */}
         </div>
     )
 }
