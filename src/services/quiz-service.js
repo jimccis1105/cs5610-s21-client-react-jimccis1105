@@ -1,4 +1,4 @@
-const QUIZZES_URL = "http://localhost:4000/api"
+const QUIZZES_URL = "https://stormy-dawn-11171.herokuapp.com/api"
 
 export const findAllQuizzes = () =>
     fetch(`${QUIZZES_URL}/quizzes`)
