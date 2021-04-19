@@ -2,6 +2,7 @@ import React from 'react'
 import CourseTable from "../course-table/course-table";
 import CourseGrid from "../course-grid/course-grid";
 import CourseEditor from "../course-editor/course-editor";
+import QuizAttempt from "../quizzes/quiz-attempt"
 import {Link, Route} from "react-router-dom";
 import courseService, {findAllCourses, deleteCourse} from "../../services/course-service";
 import "./course-manager-style.css";
@@ -168,6 +169,9 @@ class CourseManager extends React.Component {
                 ]}
                         exact={true}
                         render={(props) => <CourseEditor {...props}/>}>
+                </Route>
+                <Route path='/courses/:courseId/quizzes/:quizId/attempts' exact={true}>
+                    <QuizAttempt/>
                 </Route>
             </div>
         )

@@ -1,18 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
-const MultipleChoiceQuestion = ({question}) => {
+const MultipleChoiceQuestion = ({question, attempt, setAttempt, submitted}) => {
     const [yourAnswer, setYourAnswer] = useState("")
-    const [correctAnswer, setCorrectAnswer] = useState("")
+    // const [correctAnswer, setCorrectAnswer] = useState("")
+    useEffect(() => {
+        const excludeCurrQuestion = attempt.filter(q => q._id !== question._id)
+        question.answer = yourAnswer
+        setAttempt([...excludeCurrQuestion, question])
+     }, [yourAnswer]);
     return(
         <div>
             <h5>
                 {question.question}
                 {
-                    question.correct === correctAnswer &&
+                    submitted && question.correct === yourAnswer &&
                     <i className="fas fa-check pl-2" style={{color:'green'}}></i>
                 }
                 {
-                    correctAnswer !== "" && question.correct !== correctAnswer && 
+                    submitted && question.correct !== yourAnswer && 
                     <i className="fas fa-times pl-2" style={{color:'red'}}></i>
                 }
             </h5>
@@ -21,19 +26,19 @@ const MultipleChoiceQuestion = ({question}) => {
                     question.choices.map((choice) => {
                         return(
                             <li className={`list-group-item d-flex justify-content-between align-items-center
-                            ${correctAnswer != '' && question.correct === choice? 'list-group-item-success':''}
-                            ${correctAnswer === choice && correctAnswer != '' && question.correct != choice? 'list-group-item-danger':''}`}>
+                            ${submitted && question.correct === choice? 'list-group-item-success':''}
+                            ${submitted && yourAnswer === choice && question.correct != choice? 'list-group-item-danger':''}`}>
                                 <label><input
                                     onClick={() => {
                                         setYourAnswer(choice)
                                     }}
                                     type="radio"
                                     name={question._id}
-                                    disabled={`${correctAnswer != "" ? true: ''}`}/> {choice} </label>
-                                {correctAnswer != '' && question.correct === choice? 
+                                    disabled={submitted}/> {choice} </label>
+                                {submitted && question.correct === choice? 
                                     <i className="fas fa-check"></i>: ''
                                 }
-                                {correctAnswer === choice && correctAnswer != '' && question.correct != choice? 
+                                {submitted && yourAnswer === choice && question.correct != choice? 
                                     <i className="fas fa-times"></i>: ''
                                 }
                             </li>
@@ -44,7 +49,7 @@ const MultipleChoiceQuestion = ({question}) => {
             <p>
                 Your answer: {yourAnswer}
             </p>
-            <button onClick={()=>{setCorrectAnswer(yourAnswer)}} type="button" class="btn btn-success">Grade</button>
+            {/* <button onClick={()=>{setCorrectAnswer(yourAnswer)}} type="button" class="btn btn-success">Grade</button> */}
             <p></p>
         </div>
     )

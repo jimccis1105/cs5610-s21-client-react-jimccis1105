@@ -21,22 +21,27 @@ const QuizzesList = () => {
                 </div>
                 <h2>Quizzes</h2>
             </ul>
-            <ul class="list-group w-50">
-                {
-                    quizzes.map((quiz) => {
-                        return(
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
-                                    {quiz.title}
-                                </Link>
-                                <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
-                                    <button type="button" class="btn btn-primary">Start</button>
-                                </Link>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
+            <div class="row">
+                <ul class="list-group w-50">
+                    {
+                        quizzes.map((quiz) => {
+                            return(
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                                        {quiz.title}
+                                    </Link>
+                                    <Link to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                                        <button type="button" class="btn btn-primary">Start</button>
+                                    </Link>
+                                    <Link className='btn btn-secondary' to={`/courses/${courseId}/quizzes/${quiz._id}/attempts`}>
+                                        Attempts
+                                    </Link>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+            </div>
         </div>
     );
 }
